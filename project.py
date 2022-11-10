@@ -30,6 +30,9 @@ c.close()
 
 
 
+
+
+
 connection = sqlite3.connect('Movie.db')
 cursor = connection.cursor()
 
