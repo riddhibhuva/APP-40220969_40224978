@@ -27,3 +27,23 @@ c.execute(create_query)
 c.executemany(insert_query, values)
 conn.commit()
 c.close()
+
+
+
+connection = sqlite3.connect('Movie.db')
+cursor = connection.cursor()
+
+print(cursor.fetchall())
+cursor.execute('Create Table Movie (id varchar(20), title varchar(20), year int, score int, \
+    score_average int, type varchar(20), tmdbid varchar(20))')
+
+traffic = response.json()['search']
+#print(traffic)
+columns = ['id', 'title', 'year', 'score', \
+    'score_average', 'type', 'tmdbid']
+for row in traffic:
+    keys= tuple(row[c] for c in columns)
+    cursor.execute('insert into Movie values(?,?,?,?,?,?,?)',keys)
+
+connection.commit()
+connection.close()
