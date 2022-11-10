@@ -1,0 +1,260 @@
+{
+    "News" : 
+    [
+        {
+            "Sources" : 
+            [
+                {
+                    "Source_id" : "1",
+                    "Source_name" : "BBC-News"
+                },
+                {
+                    "Source_id" : "2",
+                    "Source_name" : "New York Times"
+                },
+                {
+                    "Source_id" : "3",
+                    "Source_name" : "Times Of India"
+                },
+                {
+                    "Source_id" : "4",
+                    "Source_name" : "National Post Canada"
+                },
+                {
+                    "Source_id" : "5",
+                    "Source_name" : "CNN"
+                }
+            ],
+
+            "Authors":
+            [
+                {
+                    "Author_id" : "1",
+                    "Author_name" : "Pranay Parab",
+                    "email" : "pranay.parab@times.in",
+                    "Source_id" : "3"
+                },
+                {
+                    "Author_id" : "2",
+                    "Author_name" : "John Fingas",
+                    "email" : "johnfin23@bbc.com",
+                    "Source_id" : "1"
+                },
+                {
+                    "Author_id" : "3",
+                    "Author_name" : "Steven Goff",
+                    "email" : "steveng@nyt.com",
+                    "Source_id" : "2"
+                },
+                {
+                    "Author_id" : "4",
+                    "Author_name" : "Victoria Song",
+                    "email" : "vicsong@bbc.com",
+                    "Source_id" : "1"
+                },
+                {
+                    "Author_id" : "5",
+                    "Author_name" : "Dan Hiching",
+                    "email" : "dhiching@npost.ca",
+                    "Source_id" : "4"
+                },
+                {
+                    "Author_id" : "6",
+                    "Author_name" : "Benjamin Lee",
+                    "email" : "benjaminlee@npost.ca",
+                    "Source_id" : "4"
+                },
+                {
+                    "Author_id" : "7",
+                    "Author_name" : "Will Shanklin",
+                    "email" : "willshan86@cnn.com",
+                    "Source_id" : "5"
+                }
+            ],
+
+            "Articles" :
+            [
+                {
+                    "Article_id" : "1", 
+                    "Title" : "Your Mac Has a Hidden White Noise Generator", 
+                    "Content" : "If you want to drown out environmental noise, or you just like having white noise in the background while you work, you should try your Mac’s white noise generator. The feature is actually built into every Mac that runs macOS Ventura, you just need to know wh…", 
+                    "Url" : "https://lifehacker.com/your-mac-has-a-hidden-white-noise-generator-1849760988", 
+                    "Published_at" : "2022-11-09T16:00:00Z", 
+                    "Country" : "United States", 
+                    "Author_id" : "1"
+                },
+                {
+                    "Article_id" : "2", 
+                    "Title" : "Spotify’s redesigned Apple Watch app feels less like an afterthought", 
+                    "Content" : "Spotify is giving its Apple Watch users some love, adding UI and playback upgrades that more closely align with the familiar experience from larger screens. In an update that starts rolling out today, watchOS users will see a beefed-up Your Library view with …", 
+                    "Url" : "https://www.engadget.com/spotify-apple-watch-app-watchos-offline-shuffle-podcasts-182436855.html", 
+                    "Published_at" : "2022-11-09T18:24:36Z",    
+                    "Country" : "Canada", 
+                    "Author_id" : "7"
+                },
+                {
+                    "Article_id" : "3", 
+                    "Title" : "Windows 11's iCloud Photos integration is now available", 
+                    "Content" : "If you use an iPhone and a Windows PC, syncing photos is about to get a lot easier. The feature Microsoft announced last month that adds iCloud Photos to the Windows Photos app\r\n begins rolling out today. Microsoft says\r\n it will be available to all Windows 1…", 
+                    "Url" : "https://www.engadget.com/windows-11-icloud-photos-update-214218257.html", 
+                    "Published_at" : "2022-11-09T21:42:18Z",    
+                    "Country" : "India", 
+                    "Author_id" : "7"
+                },
+                {
+                    "Article_id" : "4", 
+                    "Title" : "Modders thought it would be fun to make a folding iPhone", 
+                    "Content" : "You don't have wait for Apple to see what a foldable iPhone would look like in practice. China-based The Aesthetics of Science and Technology (AST) claims to have built a folding iPhone through heavy modifications. The engineers say they created the one-off w…", 
+                    "Url" : "https://www.engadget.com/folding-iphone-unofficial-171559538.html", 
+                    "Published_at" : "2022-11-09T17:15:59Z",    
+                    "Country" : "Japan", 
+                    "Author_id" : "2"
+                },
+                {
+                    "Article_id" : "5", 
+                    "Title" : "The Polar Ignite 3 comes with a daily ‘alertness’ forecast", 
+                    "Content" : "The $329.95 Polar lgnite 3 fitness watch introduces SleepWise, a new feature that analyzes your sleep and circadian rhythms to deliver a daily “alertness” forecast. It also adds multiband GPS and in-training voice guidance.", 
+                    "Url" : "https://www.theverge.com/2022/11/9/23449106/polar-ignite-3-smartwatch-fitness-tracker-alertness-levels", 
+                    "Published_at" : "2022-11-09T16:17:11Z",    
+                    "Country" : "United Kingdom", 
+                    "Author_id" : "4"
+                },
+                {
+                    "Article_id" : "6", 
+                    "Title" : "Hackers Claim World’s First Folding iPhone Required a Monumental Amount of Modifications", 
+                    "Content" : "Does Apple plan to ever release an iPhone or iPad with a folding screen? If so, the company doesn’t seem to be in any rush to get it out the door. Instead of jumping ship to Android to hop on the folding screen bandwagon, a group of talented Chinese engineers…", 
+                    "Url" : "https://gizmodo.com/hackers-say-this-is-the-world-s-first-folding-iphone-1849761977", 
+                    "Published_at" : "2022-11-09T15:35:07Z",    
+                    "Country" : "United States", 
+                    "Author_id" : "5"
+                },
+                {
+                    "Article_id" : "7", 
+                    "Title" : "Nailed It: Amazon Becomes the First Company Ever to Lose $1 Trillion in Stock Value", 
+                    "Content" : "Amazon, one of the first companies to join the prestigious $1 trillion dollar valuation club, just passed another, admittedly less desirable milestone. This week, Jeff Bezos’ Everything Store became the first publicly traded company to lose $1 tillion in mark…", 
+                    "Url" : "https://gizmodo.com/amazon-market-cap-amazon-prime-e-commerce-1849764529", 
+                    "Published_at" : "2022-11-09T22:35:00Z",    
+                    "Country" : "Japan", 
+                    "Author_id" : "3"
+                },
+                {
+                    "Article_id" : "8", 
+                    "Title" : "Jennifer Aniston has zero regrets about trying IVF", 
+                    "Content" : "The Morning Show and Friends star says she tried to get pregnant but \"the ship has sailed\".", 
+                    "Url" : "https://www.bbc.co.uk/news/entertainment-arts-63576100", 
+                    "Published_at" : "2022-11-09T17:58:36Z",    
+                    "Country" : "Japan", 
+                    "Author_id" : "6"
+                },
+                {
+                    "Article_id" : "9", 
+                    "Title" : "USB adapter claims to quadruple M2 and M1 Mac monitor support", 
+                    "Content" : "Apple says most M2- and M1-based computers only support 1 external monitor.", 
+                    "Url" : "https://arstechnica.com/gadgets/2022/11/usb-adapter-claims-to-quadruple-m2-and-m1-mac-monitor-support/", 
+                    "Published_at" : "2022-11-09T19:02:49Z",    
+                    "Country" : "India", 
+                    "Author_id" : "1"
+                },
+                {
+                    "Article_id" : "10", 
+                    "Title" : "Lawsuit claims Apple, Amazon colluded to raise iPhone, iPad prices - Reuters", 
+                    "Content" : "Apple Inc <a href=\"https://www.reuters.com/companies/AAPL.O\" target=\"_blank\">(AAPL.O)</a> and Amazon.com Inc <a href=\"https://www.reuters.com/companies/AMZN.O\" target=\"_blank\">(AMZN.O)</a> were accused in an antitrust lawsuit on Wednesday of conspiring to dri…", 
+                    "Url" : "https://www.reuters.com/legal/lawsuit-claims-apple-amazon-colluded-raise-iphone-ipad-prices-2022-11-09/",
+                    "Published_at" : "2022-11-09T19:18:00Z",
+                    "Country" : "United States", 
+                    "Author_id" : "7"
+                },
+                {
+                    "Article_id" : "11", 
+                    "Title" : "Cool kids want to dress like old crunchy people’: the fashion newsletter where wholesome is hip", 
+                    "Content" : "Jonah Weiner and Erin Wylie’s blend of insight and humor has drawn tens of thousands of subscribers to Blackbird SkyplaneSubscribers to the Blackbird Spyplane newsletter never quite know what’s going to arrive in their inbox. A post might be dedicated to busi…", 
+                    "Url" : "https://www.theguardian.com/fashion/2022/nov/09/blackbird-spyplane-newsletter-jonah-weiner-interview", 
+                    "Published_at" : "2022-11-10T06:00:48Z",    
+                    "Country" : "India", 
+                    "Author_id" : "4"
+                },
+                {
+                    "Article_id" : "12", 
+                    "Title" : "Amazon and Apple 'Colluded' to Make iPhone and iPad More Expensive, Says Antitrust Lawsuit", 
+                    "Content" : "Apple and Amazon worked together to raise the price of iPhones and iPads by eliminating third-party Amazon sellers who offered Apple products at a lower cost, according to a new antitrust lawsuit filed today in Washington.\n\n\n\n\n\nThe complaint, filed by Hagens …", 
+                    "Url" : "https://www.macrumors.com/2022/11/09/amazon-apple-collusion-antitrust-lawsuit/", 
+                    "Published_at" : "2022-11-09T17:50:19Z",    
+                    "Country" : "United Kingdom", 
+                    "Author_id" : "2"
+                },
+                {
+                    "Article_id" : "13", 
+                    "Title" : "Meta to cut more than 11000 jobs in one of the biggest layoffs this year", 
+                    "Content" : "Meta Platforms Inc <a href=\"https://www.reuters.com/companies/META.O\" target=\"_blank\">(META.O)</a> said on Wednesday it will let go of 13% of its workforce, or more than 11,000 employees, in one of the biggest layoffs this year as the Facebook parent battles …", 
+                    "Url" : "https://www.reuters.com/technology/meta-cut-more-than-11000-jobs-one-biggest-us-layoffs-this-year-2022-11-09/", 
+                    "Published_at" : "2022-11-09T11:19:00Z",    
+                    "Country" : "United Kingdom", 
+                    "Author_id" : "6"
+                },
+                {
+                    "Article_id" : "14", 
+                    "Title" : "Asian shares fall ahead of U.S. CPI, crypto worries mount", 
+                    "Content" : "Asian share markets were tense on Thursday and the dollar held on to its overnight gains before the big test of a U.S. consumer inflation report, while market sentiment took a dive as the likely collapse of a major crypto exchange spooked investors.", 
+                    "Url" : "https://www.reuters.com/markets/global-markets-wrapup-1-pix-2022-11-10/", 
+                    "Published_at" : "2022-11-10T02:04:00Z",    
+                    "Country" : "India", 
+                    "Author_id" : "5"
+                },
+                {
+                    "Article_id" : "15", 
+                    "Title" : "Tesla shares down over 5%, hit the lowest level in 20 months", 
+                    "Content" : "Tesla Inc <a href=\"https://www.reuters.com/companies/TSLA.O\" target=\"_blank\">(TSLA.O)</a> shares slid to their lowest level in nearly two years on Wednesday after Chief Executive Elon Musk <a href=\"/business/autos-transportation/elon-musk-sells-195-mln-tesla-…", 
+                    "Url" : "https://www.reuters.com/business/autos-transportation/tesla-shares-down-over-5-hit-lowest-level-20-months-2022-11-09/", 
+                    "Published_at" : "2022-11-09T18:36:00Z",    
+                    "Country" : "Japan", 
+                    "Author_id" : "3"
+                },
+                {
+                    "Article_id" : "16", 
+                    "Title" : "ByteDance's U.S. copyright lawsuit over 'League of Legends' duplicative, says judge", 
+                    "Content" : "ByteDance's Shanghai Moonton Technology Co Ltd does not have to face Riot Games Inc's copyright lawsuit over allegations that Moonton copied parts of the mobile version of Riot's hit \"League of Legends,\" according to a ruling in Los Angeles federal court.", 
+                    "Url" : "https://www.reuters.com/legal/litigation/bytedances-us-copyright-lawsuit-over-league-legends-duplicative-says-judge-2022-11-09/", 
+                    "Published_at" : "2022-11-09T19:50:00Z",    
+                    "Country" : "United States", 
+                    "Author_id" : "7"
+                },
+                {
+                    "Article_id" : "17", 
+                    "Title" : "Amazon Fire TV Cube (2022) review: Faster and smarter, but with a couple of caveats", 
+                    "Content" : "If you're looking for one of the fastest streaming devices on the market, Amazon has you covered with the Fire TV Cube (2022). Just be prepared to deal with a few caveats while trying to find something to watch.", 
+                    "Url" : "https://www.androidcentral.com/streaming-tv/amazon-fire-tv-cube-2022-review", 
+                    "Published_at" : "2022-11-09T15:15:24Z",    
+                    "Country" : "Canada", 
+                    "Author_id" : "1"
+                },
+                {
+                    "Article_id" : "18", 
+                    "Title" : "Apple Watch Ultra review: the super-charged smartwatch", 
+                    "Content" : "Bigger and longer-lasting with a new rugged design, but falls short for adventurers and endurance athletesFor the first time in years, there’s a new top Apple smartwatch model available that’s beefier, hardier, lasts longer and is aimed squarely at dethroning…", 
+                    "Url" : "https://www.theguardian.com/technology/2022/nov/09/apple-watch-ultra-review-smartwatch-design-athletes", 
+                    "Published_at" : "2022-11-09T07:00:24Z",    
+                    "Country" : "Canada", 
+                    "Author_id" : "1"
+                },
+                {
+                    "Article_id" : "19", 
+                    "Title" : "Spirited review – Will Ferrell and Ryan Reynolds hit all the wrong notes in Christmas musical", 
+                    "Content" : "The two make for an awkward double act in a slick but grating song-and-dance spin on A Christmas Carol that will make grinches of us allIt’s been almost 20 years since Will Ferrell and Jon Favreau gifted us the unlikely yet enduring Christmas winner Elf, the …", 
+                    "Url" : "https://www.theguardian.com/film/2022/nov/09/spirited-review-will-ferrell-ryan-reynolds", 
+                    "Published_at" : "2022-11-09T18:03:45Z",    
+                    "Country" : "United States", 
+                    "Author_id" : "5"
+                },
+                {
+                    "Article_id" : "20", 
+                    "Title" : "Why Mark Zuckerberg had to announce 11,000 job cuts at Meta", 
+                    "Content" : "Company thought rise in online activity would last, rivals stole its users, and metaverse was too uncertain for shareholdersThere are a lot of reasons why Mark Zuckerberg felt he had no choice but to institute a bruising wave of 11,000 redundancies at Meta.Th…", 
+                    "Url" : "https://www.theguardian.com/technology/2022/nov/09/why-mark-zuckerberg-announce-11000-job-cuts-meta", 
+                    "Published_at" : "2022-11-09T18:37:20Z",    
+                    "Country" : "United States", 
+                    "Author_id" : "3"
+                }
+            ]
+        }
+    ]
+}
