@@ -1,4 +1,5 @@
-{"News" : 
+{
+    "News" : 
     [
         {
             "Sources" : 
@@ -23,10 +24,8 @@
                     "Source_id" : "5",
                     "Source_name" : "CNN"
                 }
-            ]
-        },
+            ],
 
-        {
             "Authors":
             [
                 {
@@ -71,10 +70,8 @@
                     "email" : "willshan86@cnn.com",
                     "Source_id" : "5"
                 }
-            ]
-        },
+            ],
 
-        {
             "Articles" :
             [
                 {
