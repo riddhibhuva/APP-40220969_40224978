@@ -14,26 +14,26 @@ class ArticleMapper:
             self._sqlConnection.executeQuery(squery)
 
 
-    def deleteRow(self, choice):
-        #print(choice)
-
+    def deleteOperation(self, choice):
         if choice == "1":
-            print()
-            # Remaining
-
+            Ddate=input("Enter the date for which you want to delete records : ")
+            squery = 'DELETE From Articles where Published_at = "' + Ddate + '" ;'
         elif choice == "2":
-
-            article_id_del=input("Enter the ID of Article you want to delete")
-            delquery = 'DELETE From Articles where Article_id = "' + article_id_del + '" ;'
-            self._sqlConnection.executeQuery(delquery)
-
+            Aid=input("Enter the ID of which you want to delete the article : ")
+            squery = 'DELETE From Articles where Article_id = "' + Aid + '" ;'
+            self._sqlConnection.executeQuery(squery)
         else:
             print("Wrong Choice enetered")
 
-    def DisplayOperation(self):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
-        self._sqlConnection.executeQuery(squery)
-
-    def SearchAuthorArticles(self, Aid):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_id = "' + Aid +'";'
+    def SearchOperation(self,Choice):
+        if Choice=="1":
+            squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
+        elif Choice=="2":
+            Aname = input("Enter name of author for who you want to search articles : ")
+            squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_name = "' + Aname +'";'
+        elif Choice=="2":
+            Sname = input("Enter source name for which you want to search articles : ")
+            squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Source_id = (SELECT Source_id from Sources WHERE Source_name = "' + Sname +'");'
+        else:
+            print("Wrong Choice enetered")
         self._sqlConnection.executeQuery(squery)
