@@ -9,5 +9,5 @@ class SourceMappper:
         self._sqlConnection.execute(squery)
     
     def insertRow(self, dataObj):
-        squery = 'INSERT INTO Sources(Source_id, Source_name) VALUES("' + \ dataObj['Source_id']+'","' + dataObj['Source_name']+'");'
+        squery = 'INSERT INTO Sources(Source_id, Source_name) VALUES("' + dataObj['Source_id']+'","' + dataObj['Source_name']+'");'
         self._sqlConnection.execute(squery)

@@ -9,5 +9,5 @@ class AuthorMappper:
         self._sqlConnection.execute(squery)
     
     def insertRow(self, dataObj):
-        squery = 'INSERT INTO Authors(Author_id, Author_name, email, Source_id) VALUES("' + \ dataObj['Author_id']+'","' + dataObj['Author_name']+'","' + dataObj['email']+'","' + dataObj['Source_id']+'");'
+        squery = 'INSERT INTO Authors(Author_id, Author_name, email, Source_id) VALUES("' + dataObj['Author_id']+'","' + dataObj['Author_name']+'","' + dataObj['email']+'","' + dataObj['Source_id']+'");'
         self._sqlConnection.execute(squery)
