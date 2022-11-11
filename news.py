@@ -51,6 +51,33 @@ class Server:
             if type(item) is dict and "Articles" in item.keys():
                 self._ArticleMapper.insertRow(item["Articles"])
         print("Task Completed.....")
+        while True:
+            operation=""
+            choice =0
+            operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Insert \n 4.Search')
+            if (operation == "Delete"):
+
+                choice=input("1. Delete Article based on published date \n 2.Delete Article based on Article id")
+                self._ArticleMapper.deleteRow(choice)
+
+            elif (operation == "Update"):
+                print()
+
+            elif (operation == "Select"):
+                print()
+
+            elif (operation == "Insert"):
+                self._ArticleMapper.insertRowDB()
+
+            else:
+                print()
+
+
+
+
+
+
+
 
     def serverInfo(self):
         print(f" Server up and listening on {self._HOST}: {self._PORT}.")
