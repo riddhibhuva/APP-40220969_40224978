@@ -7,7 +7,7 @@ class Database:
     def __init__(self):
         self._DBName = "News.db"
         if Database.__classObject != None:
-            raise Exception("No other Object can be Created")
+            raise Exception("Singleton Class error")
         else:
             Database.__classObject = self
 
@@ -29,9 +29,9 @@ class Database:
                 self.__sqlConnection = sqliteConnection
                 print("Database successfully connected")
 
-    def executeQuery(self,squery):
+    def executeQuery(self,query):
         try:
-            connection = self.__sqlConnection.execute(squery)
+            connection = self.__sqlConnection.execute(query)
             self.__sqlConnection.commit()
             return connection
         except sqlite3.Error as error:
