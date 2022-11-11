@@ -54,21 +54,19 @@ class Server:
         while True:
             operation=""
             choice =0
-            operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Insert \n 4.Search')
+            operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Search')
             if (operation == "Delete"):
 
                 choice=input("1. Delete Article based on published date \n 2.Delete Article based on Article id")
                 self._ArticleMapper.deleteOperation(choice)
 
             elif (operation == "Update"):
-                print()
+                choice = input("1. Display All Articles in DB \n 2.")
 
             elif (operation == "Search"):
                 choice=input("1. Search all Articles \n 2.Search Articles based on Author name \n 3.Search Articles based on Source name")
                 self._ArticleMapper.SearchOperation(choice)
 
-            elif (operation == "Insert"):
-                self._ArticleMapper.insertRowDB()
 
             else:
                 print()
