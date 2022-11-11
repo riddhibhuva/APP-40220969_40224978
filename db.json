@@ -139,10 +139,10 @@
                 },
                 {
                     "Article_id" : "8", 
-                    "Title" : "Jennifer Aniston has zero regrets about trying IVF", 
-                    "Content" : "The Morning Show and Friends star says she tried to get pregnant but \"the ship has sailed\".", 
-                    "Url" : "https://www.bbc.co.uk/news/entertainment-arts-63576100", 
-                    "Published_at" : "2022-11-09T17:58:36Z",    
+                    "Title" : "Energy suppliers criticised over leaving cash-strapped households without power",
+                    "Content" : "Regulator says vulnerable households put on prepayment meters can be left without power for days and even weeksOfgem has told energy suppliers in Britain to clean up their act after it received alarming reports of cash-strapped households being left without p…",
+                    "Url" : "https://www.theguardian.com/business/2022/nov/09/british-energy-suppliers-criticised-over-disconnection-by-the-back-door",
+                    "Published_at" : "2022-11-09T14:18:21Z",
                     "Country" : "Japan", 
                     "Author_id" : "6"
                 },
@@ -157,10 +157,10 @@
                 },
                 {
                     "Article_id" : "10", 
-                    "Title" : "Lawsuit claims Apple, Amazon colluded to raise iPhone, iPad prices - Reuters", 
-                    "Content" : "Apple Inc <a href=\"https://www.reuters.com/companies/AAPL.O\" target=\"_blank\">(AAPL.O)</a> and Amazon.com Inc <a href=\"https://www.reuters.com/companies/AMZN.O\" target=\"_blank\">(AMZN.O)</a> were accused in an antitrust lawsuit on Wednesday of conspiring to dri…", 
-                    "Url" : "https://www.reuters.com/legal/lawsuit-claims-apple-amazon-colluded-raise-iphone-ipad-prices-2022-11-09/",
-                    "Published_at" : "2022-11-09T19:18:00Z",
+                    "Title" : "US estimates 200,000 military casualties on all sides in Ukraine war", 
+                    "Content" : "US general’s remarks come as experts say potential winter lull in fighting could offer chance for negotiations • Russia-Ukraine war – latest news updatesAmerica’s top general has estimated that 100,000 Russian soldiers have been killed or wounded in Ukraine, …", 
+                    "Url" : "https://www.theguardian.com/world/2022/nov/10/us-estimates-200000-military-casualties-all-sides-ukraine-war",
+                    "Published_at" : "2022-11-10T09:44:39Z",
                     "Country" : "United States", 
                     "Author_id" : "7"
                 },
@@ -184,10 +184,10 @@
                 },
                 {
                     "Article_id" : "13", 
-                    "Title" : "Meta to cut more than 11000 jobs in one of the biggest layoffs this year", 
-                    "Content" : "Meta Platforms Inc <a href=\"https://www.reuters.com/companies/META.O\" target=\"_blank\">(META.O)</a> said on Wednesday it will let go of 13% of its workforce, or more than 11,000 employees, in one of the biggest layoffs this year as the Facebook parent battles …", 
-                    "Url" : "https://www.reuters.com/technology/meta-cut-more-than-11000-jobs-one-biggest-us-layoffs-this-year-2022-11-09/", 
-                    "Published_at" : "2022-11-09T11:19:00Z",    
+                    "Title" : "UK civil servants in Whitehall and frontline services vote to strike", 
+                    "Content" : "100,000 PCS members across public sector will join nurses in wave of upcoming stoppagesCivil servants running public services from passports to pensions have voted to take strike action, joining a wave of stoppages set to hit the UK, as workers fight to prote…", 
+                    "Url" : "https://www.theguardian.com/uk-news/2022/nov/10/uk-civil-servants-whitehall-frontline-services-vote-strike", 
+                    "Published_at" : "2022-11-10T12:45:33Z",    
                     "Country" : "United Kingdom", 
                     "Author_id" : "6"
                 },
@@ -202,19 +202,19 @@
                 },
                 {
                     "Article_id" : "15", 
-                    "Title" : "Tesla shares down over 5%, hit the lowest level in 20 months", 
-                    "Content" : "Tesla Inc <a href=\"https://www.reuters.com/companies/TSLA.O\" target=\"_blank\">(TSLA.O)</a> shares slid to their lowest level in nearly two years on Wednesday after Chief Executive Elon Musk <a href=\"/business/autos-transportation/elon-musk-sells-195-mln-tesla-…", 
-                    "Url" : "https://www.reuters.com/business/autos-transportation/tesla-shares-down-over-5-hit-lowest-level-20-months-2022-11-09/", 
-                    "Published_at" : "2022-11-09T18:36:00Z",    
+                    "Title" : "Big rise in number of fossil fuel lobbyists at Cop27 climate summit", 
+                    "Content" : "Oil and gas industries have 636 representatives at Egypt conference – a rise of more than 25% on last year <ul><li>Cop27 live – latest news updates</li></ul>There are more than 600 fossil fuel lobbyists at the Cop27 climate conference, a rise of more than 25%…", 
+                    "Url" : "https://www.theguardian.com/environment/2022/nov/10/big-rise-in-number-of-fossil-fuel-lobbyists-at-cop27-climate-summit",
+                    "Published_at" : "2022-11-10T09:32:49Z",
                     "Country" : "Japan", 
                     "Author_id" : "3"
                 },
                 {
                     "Article_id" : "16", 
-                    "Title" : "ByteDance's U.S. copyright lawsuit over 'League of Legends' duplicative, says judge", 
-                    "Content" : "ByteDance's Shanghai Moonton Technology Co Ltd does not have to face Riot Games Inc's copyright lawsuit over allegations that Moonton copied parts of the mobile version of Riot's hit \"League of Legends,\" according to a ruling in Los Angeles federal court.", 
-                    "Url" : "https://www.reuters.com/legal/litigation/bytedances-us-copyright-lawsuit-over-league-legends-duplicative-says-judge-2022-11-09/", 
-                    "Published_at" : "2022-11-09T19:50:00Z",    
+                    "Title" : "What Companies Are in the Technology Field", 
+                    "Content" : "The technology field is vast but also very diverse. Technology-based companies can be anyone specializing in the sales side of technology for digital goods and services, like your everyday products like mobile phones, computers, and e-reader tablets, or it ca…",
+                    "Url" : "https://readwrite.com/what-companies-are-in-the-technology-field/",
+                    "Published_at" : "2022-11-09T19:00:29Z",
                     "Country" : "United States", 
                     "Author_id" : "7"
                 },
