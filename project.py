@@ -28,9 +28,6 @@ import sqlite3
 # conn.commit()
 # c.close()
 
-<<<<<<< HEAD
-connection = sqlite3.connect('news.db')
-=======
 columns = []
 column = []
 for data in db_json:
@@ -61,7 +58,6 @@ c.close()
 
 
 connection = sqlite3.connect('Movie.db')
->>>>>>> 764e643f30d886aa0bbaa113a02642fc3aa82735
 cursor = connection.cursor()
 
 print(cursor.fetchall())

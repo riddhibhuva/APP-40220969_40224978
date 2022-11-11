@@ -1,6 +1,6 @@
 from Connect import Database 
 
-class AuthorMappper:
+class AuthorMapper:
     def __init__(self) :
         self._sqlConnection = Database.getClassObject()
     

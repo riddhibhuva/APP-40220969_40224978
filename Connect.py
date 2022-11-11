@@ -7,7 +7,7 @@ class Database:
     def __init__(self):
         self._DBName = "News.db"
         if Database.__classObject != None:
-            raise Exception("No other OBject can be Created")
+            raise Exception("No other Object can be Created")
         else:
             Database.__classObject = self
 

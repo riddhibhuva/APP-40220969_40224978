@@ -35,7 +35,7 @@ class Server:
         response = requests.get ("https://raw.githubusercontent.com/Utsav-Virani/DataSet/main/APIRes.json").json ()
         db = Database.getClassInstance ()
         db. connect ()
-        print("Database Connected to the Backnd")
+        print("Database Connected to the Backend")
         self._SourceMapper.create ()
         self._AuthorMapper.create ()
         self._ArticleMapper.create ()
