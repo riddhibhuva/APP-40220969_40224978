@@ -12,3 +12,11 @@ class ArticleMapper:
         for data in dataObj:
             squery = 'INSERT or IGNORE INTO Articles(Article_id, Title, Content, Url, Published_at, Country, Author_id) VALUES("' + data['Article_id']+'","' + data['Title']+'","' + data['Content']+'","' + data['Url']+'","' + data['Published_at']+'","' + data['Country']+'","' + data['Author_id']+'");'
             self._sqlConnection.executeQuery(squery)
+
+    def DisplayOperation(self):
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
+        self._sqlConnection.executeQuery(squery)
+
+    def SearchAuthorArticles(self, Aid):
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_id = "' + Aid +'";'
+        self._sqlConnection.executeQuery(squery)

@@ -10,7 +10,10 @@ class SourceMapper :
         self._sqlConnection.executeQuery(squery)
     
     def insertRow(self, dataObj):
-        #print(dataObj)
         for data in dataObj:
             squery = 'INSERT or IGNORE INTO Sources(Source_id, Source_name) VALUES('+str(data['Source_id'])+',"' + data['Source_name']+'"); '
             self._sqlConnection.executeQuery(squery)
+
+    def DisplayOperation(self):
+        squery = 'SELECT Source_name FROM Sources;'
+        self._sqlConnection.executeQuery(squery)
