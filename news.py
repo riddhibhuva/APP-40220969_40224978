@@ -56,20 +56,26 @@ class Server:
             choice =0
             operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Search')
             if (operation == "Delete"):
-
                 choice=input("1. Delete Article based on published date \n 2.Delete Article based on Article id")
                 self._ArticleMapper.deleteOperation(choice)
 
             elif (operation == "Update"):
-                choice = input("1. Display All Articles in DB \n 2.")
+                choice = input("1. Update email of author based on author name \n 2.Update source for author based on author name")
+                self._AuthorMapper.UpdateOperation(choice)
 
             elif (operation == "Search"):
-                choice=input("1. Search all Articles \n 2.Search Articles based on Author name \n 3.Search Articles based on Source name")
-                self._ArticleMapper.SearchOperation(choice)
-
+                choice=input("1.Search all Sources \n 2.Search all authors \n 3.Search all authors for a source \n 4. Search all Articles \n 5.Search Articles based on Author name \n 6.Search Articles based on Source name ")
+                if choice == "1":
+                    self._SourceMapper.SearchOperation()
+                elif choice == "2" or choice == "3":
+                    self._AuthorMapper.SearchOperation(choice)
+                elif choice == "4" or choice == "5" or choice == "6" :
+                    self._ArticleMapper.SearchOperation(choice)
+                else:
+                    print("Wrong Choice entred")
 
             else:
-                print()
+                print("Wrong Choice entred")
 
 
 

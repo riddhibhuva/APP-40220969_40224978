@@ -14,6 +14,6 @@ class SourceMapper :
             squery = 'INSERT or IGNORE INTO Sources(Source_id, Source_name) VALUES('+str(data['Source_id'])+',"' + data['Source_name']+'"); '
             self._sqlConnection.executeQuery(squery)
 
-    def DisplayOperation(self):
+    def SearchOperation(self):
         squery = 'SELECT Source_name FROM Sources;'
         self._sqlConnection.executeQuery(squery)
