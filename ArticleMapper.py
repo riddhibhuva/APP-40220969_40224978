@@ -18,22 +18,30 @@ class ArticleMapper:
         if choice == "1":
             Ddate=input("Enter the date for which you want to delete records : ")
             squery = 'DELETE From Articles where Published_at = "' + Ddate + '" ;'
+            self._sqlConnection.executeQuery(squery)
         elif choice == "2":
             Aid=input("Enter the ID of which you want to delete the article : ")
             squery = 'DELETE From Articles where Article_id = "' + Aid + '" ;'
             self._sqlConnection.executeQuery(squery)
         else:
-            print("Wrong Choice enetered")
+            print("Wrong Choice entered")
 
     def SearchOperation(self,Choice):
-        if Choice=="1":
+        squery =""
+        if Choice=="4":
             squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
-        elif Choice=="2":
-            Aname = input("Enter name of author for who you want to search articles : ")
+        elif Choice=="5":
+            Aname = input("Enter name of author for whom you want to search articles : ")
             squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_name = "' + Aname +'";'
-        elif Choice=="2":
+        elif Choice=="6":
             Sname = input("Enter source name for which you want to search articles : ")
             squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Source_id = (SELECT Source_id from Sources WHERE Source_name = "' + Sname +'");'
         else:
-            print("Wrong Choice enetered")
-        self._sqlConnection.executeQuery(squery)
+            print("Wrong Choice entered")
+        result = self._sqlConnection.executeQuery(squery)
+        for data in result:
+            print(data)
+
+
+
+

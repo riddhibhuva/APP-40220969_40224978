@@ -14,6 +14,7 @@ class AuthorMapper:
             self._sqlConnection.executeQuery(squery)
 
     def SearchOperation(self, Choice):
+        squery=""
         if Choice=="2":
             squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id;'
         elif Choice=="3":
@@ -21,17 +22,22 @@ class AuthorMapper:
             squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id WHERE Sources.Source_name = "' + Sname+';'
         else:
             print("Wrong Choice entered")
-        self._sqlConnection.executeQuery(squery)
+        result = self._sqlConnection.executeQuery(squery)
+        for data in result:
+            print(data)
+
 
     def UpdateOperation(self, Choice):
+        squery =""
         if Choice=="1":
-            Aname = input("Enter name of author for who you want to change email : ")
-            email = input("Enter new email for ", Aname, " : ")
-            squery = 'UPDATE Authors SET email = "' +email+'" WHERE Author_name = "' + Aname+';'
+            Aname = input("Enter name of author for whom you want to change email : ")
+            email = input("Enter new email : ")
+            squery = 'UPDATE Authors SET email = "' +email+'" WHERE Author_name = "' + Aname+'";'
         elif Choice=="2":
-            Aname = input("Enter name of author for who you want to change source : ")
-            Sname = input("Enter new source name for ", Aname, " : ")
-            squery = 'UPDATE Authors SET Source_id = "' +Sname+'" WHERE Author_name = "' + Aname+';'
+            Aname = input("Enter name of author for whom you want to change source : ")
+            Sname = input("Enter new source name : ")
+            squery = 'UPDATE Authors SET Source_id = "' +Sname+'" WHERE Author_name = "' + Aname+'";'
         else:
-            print("Wrong Choice entered")        
+            print("Wrong Choice entered")
+
         self._sqlConnection.executeQuery(squery)

@@ -72,7 +72,7 @@ class Server:
                 elif choice == "4" or choice == "5" or choice == "6" :
                     self._ArticleMapper.SearchOperation(choice)
                 else:
-                    print("Wrong Choice entred")
+                    print("Wrong Choice entered")
 
             else:
                 print("Wrong Choice entred")

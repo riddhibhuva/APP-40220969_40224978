@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4d5d2036-920a-4b83-873e-6c625fc65c4b" name="Changes" comment="Adding Delete Function in ArticleMApper file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArticleMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleMapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthorMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/AuthorMapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SourceMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/SourceMapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.db" beforeDir="false" afterPath="$PROJECT_DIR$/news.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/news.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668194777124</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding Delete Function in ArticleMApper file">
+      <created>1668209399649</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668209399649</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
