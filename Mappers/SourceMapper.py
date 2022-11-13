@@ -16,5 +16,9 @@ class SourceMapper :
     def SearchOperation(self):
         squery = 'SELECT Source_name FROM Sources;'
         result = self._sqlConnection.executeQuery(squery)
+        column_name = ["Source_name"]
+        final = []
         for data in result:
-            print(data)
+            temp = dict(zip(column_name, data))
+            final.append(temp)
+        return (final)

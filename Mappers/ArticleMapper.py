@@ -22,19 +22,38 @@ class ArticleMapper:
         self._sqlConnection.executeQuery(squery)
 
     def SearchAllOperation(self):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
+        squery = 'SELECT Articles.Article_id, Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
         result = self._sqlConnection.executeQuery(squery)
+        column_name = ["Article_id","Title","content","Url","Published_at","Country","Author_name"]
+        final = []
         for data in result:
-            print(data)
+            temp = dict(zip(column_name, data))
+            final.append(temp)
+        return (final)
+        # for data in result:
+        #     print(data)
 
     def SearchAuthorArticlesOperation(self,dataObj):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_name = "' + dataObj.get_author_name() + '";'
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_name = "' + str(dataObj['Author_name']) + '";'
         result = self._sqlConnection.executeQuery(squery)
+        column_name = ["Title", "Content", "Url","Published_at", "Country", "Author_name"]
+        final = []
         for data in result:
-            print(data)
+            temp = dict(zip(column_name, data))
+            final.append(temp)
+        return final
+        # for data in result:
+        #     print(data)
 
     def SearchSourceArticlesOperation(self,dataObj):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Source_id = (SELECT Source_id from Sources WHERE Source_name = "' + dataObj.get_source_name() +'");'
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Source_id = (SELECT Source_id from Sources WHERE Source_name = "' + str(dataObj['Source_name']) +'");'
         result = self._sqlConnection.executeQuery(squery)
+        column_name = ["Title", "Content", "Url", "Published_at", "Country", "Author_name"]
+        final = []
         for data in result:
-            print(data)
+            temp = dict(zip(column_name, data))
+            final.append(temp)
+        return final
+
+        # for data in result:
+        #     print(data)

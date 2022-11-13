@@ -15,15 +15,31 @@ class AuthorMapper:
     def SearchAllOperation(self):
         squery = 'SELECT Authors.Author_name, Authors.email, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id;'
         result = self._sqlConnection.executeQuery(squery)
+        column_name = ["Author_name", "email", "Source_name"]
+        final = []
         for data in result:
-            print(data)
+            temp = dict(zip(column_name, data))
+            final.append(temp)
+        return (final)
+
+
+
+        # for data in result:
+        #     print(data)
 
     def SearchAuthorOperation(self, dataObj):
-        squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id WHERE Sources.Source_name = "' + dataObj.get_source_name()+'";'
+        squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id WHERE Sources.Source_name = "' + str(dataObj['Source_name'])+'";'
         result = self._sqlConnection.executeQuery(squery)
-
+        #print(squery)
+        column_name = ["Author_name", "Source_name"]
+        final = []
         for data in result:
-            print(data)
+            temp = dict(zip(column_name, data))
+            final.append(temp)
+        return final
+
+        # for data in result:
+        #     print(data)
 
     def UpdateEmailOperation(self, dataObj):
         squery = 'UPDATE Authors SET email = "' +dataObj.get_Email()+'" WHERE Author_name = "' + dataObj.get_author_name()+'";'
