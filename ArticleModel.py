@@ -46,6 +46,8 @@ class ArticleModel:
 
     def set_author_id(self, authid):
         self.author_id = authid
+        print(authid)
+        print(self.author_id)
 
     def get_author_id(self):
         return self.author_id
