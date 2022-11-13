@@ -5,7 +5,9 @@ from SourceMapper import SourceMapper
 from AuthorMapper import AuthorMapper
 from ArticleMapper import ArticleMapper
 from Connect import Database
-
+from SourceModel import SourceModel
+from AuthorModel import AuthorModel
+from ArticleModel import ArticleModel
 
 class Server:
     def __init__(self, HOST, PORT):
@@ -40,49 +42,100 @@ class Server:
         self._SourceMapper.createTable()
         self._AuthorMapper.createTable()
         self._ArticleMapper.createTable()
+
+        sourcemodelObj = SourceModel()
+        authormodelObj = AuthorModel()
+        articlemodelObj = ArticleModel()
+
+
         print(len(response["News"]))
+
         for item in response["News"]:
-            if type(item) is dict and "Sources" in item.keys():
-                self._SourceMapper.insertRow(item ["Sources"])
+            for data in item["Sources"]:
+                sourcemodelObj.set_source_id(data['Source_id'])
+                sourcemodelObj.set_source_name(data['Source_name'])
+                self._SourceMapper.insertRow(sourcemodelObj)
         for item in response ["News"]:
-            if type(item) is dict and "Authors" in item.keys():
-                self._AuthorMapper.insertRow(item["Authors"])
+            for data in item["Authors"]:
+                authormodelObj.set_author_id(data['Author_id'])
+                authormodelObj.set_author_name(data['Author_name'])
+                authormodelObj.set_Email(data['email'])
+                authormodelObj.set_source_id(data['Source_id'])
+                self._AuthorMapper.insertRow(authormodelObj)
         for item in response["News"]:
-            if type(item) is dict and "Articles" in item.keys():
-                self._ArticleMapper.insertRow(item["Articles"])
+            for data in item["Articles"]:
+                articlemodelObj.set_article_id(data['Article_id'])
+                articlemodelObj.set_title(data['Title'])
+                articlemodelObj.set_content(data['Content'])
+                articlemodelObj.set_url(data['Url'])
+                articlemodelObj.set_published_at(data['Published_at'])
+                articlemodelObj.set_country(data['Country'])
+                articlemodelObj.set_author_id(data['Author_id'])
+                self._ArticleMapper.insertRow(articlemodelObj)
         print("Task Completed.....")
         while True:
             operation=""
             choice =0
-            operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Search')
+            operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Search \n 4.Exit')
             if (operation == "Delete"):
-                choice=input("1. Delete Article based on published date \n 2.Delete Article based on Article id")
-                self._ArticleMapper.deleteOperation(choice)
-
-            elif (operation == "Update"):
-                choice = input("1. Update email of author based on author name \n 2.Update source for author based on author name")
-                self._AuthorMapper.UpdateOperation(choice)
-
-            elif (operation == "Search"):
-                choice=input("1.Search all Sources \n 2.Search all authors \n 3.Search all authors for a source \n 4. Search all Articles \n 5.Search Articles based on Author name \n 6.Search Articles based on Source name ")
+                choice=input(" 1.Delete Article based on published date \n 2.Delete Article based on Article id")
                 if choice == "1":
-                    self._SourceMapper.SearchOperation()
-                elif choice == "2" or choice == "3":
-                    self._AuthorMapper.SearchOperation(choice)
-                elif choice == "4" or choice == "5" or choice == "6" :
-                    self._ArticleMapper.SearchOperation(choice)
+                    Ddate = input("Enter the date for which you want to delete records : ")
+                    articlemodelObj.set_published_at(Ddate)
+                    self._ArticleMapper.deleteArticlebydateOperation(articlemodelObj)
+                elif choice == "2":
+                    Aid = input("Enter the ID of which you want to delete the article : ")
+                    articlemodelObj.set_author_id(Aid)
+                    print(authormodelObj.author_id)
+                    self._ArticleMapper.deleteArticlebyidOperation(articlemodelObj)
                 else:
                     print("Wrong Choice entered")
 
+            elif (operation == "Update"):
+                choice = input(" 1.Update email of author based on author name \n 2.Update source for author based on author name")
+                if choice == "1":
+                    Aname = input("Enter name of author for whom you want to change email : ")
+                    authormodelObj.set_author_name(Aname)
+                    email = input("Enter new email : ")
+                    authormodelObj.set_Email(email)
+                    self._AuthorMapper.UpdateEmailOperation(authormodelObj)
+                elif choice == "2":
+                    Aname = input("Enter name of author for whom you want to change source : ")
+                    authormodelObj.set_author_name(Aname)
+                    Sname = input("Enter new source name : ")
+                    sourcemodelObj.set_source_name(Sname)
+                    self._AuthorMapper.UpdateSourceOperation(authormodelObj, sourcemodelObj)
+                else:
+                    print("Wrong Choice entered")
+
+            elif (operation == "Search"):
+                choice=input(" 1.Search all Sources \n 2.Search all authors \n 3.Search all authors for a source \n 4.Search all Articles \n 5.Search Articles based on Author name \n 6.Search Articles based on Source name ")
+                if choice == "1":
+                    self._SourceMapper.SearchOperation()
+                elif choice == "2" :
+                    self._AuthorMapper.SearchAllOperation()
+                elif choice == "3":
+                    Sname = input("Enter Source name for which you want to see authors : ")
+                    sourcemodelObj.set_source_name(Sname)
+                    self._AuthorMapper.SearchAuthorOperation(sourcemodelObj)
+                elif choice == "4" :
+                    self._ArticleMapper.SearchAllOperation()
+                elif choice == "5" :
+                    Aname = input("Enter name of author for whom you want to search articles : ")
+                    authormodelObj.set_author_name(Aname)
+                    self._ArticleMapper.SearchAuthorArticlesOperation(authormodelObj)
+                elif choice == "6" :
+                    Sname = input("Enter source name for which you want to search articles : ")
+                    sourcemodelObj.set_source_name(Sname)
+                    self._ArticleMapper.SearchSourceArticlesOperation(sourcemodelObj)
+                else:
+                    print("Wrong Choice entered")
+
+            elif (operation == "Exit"):
+                exit()
+
             else:
-                print("Wrong Choice entred")
-
-
-
-
-
-
-
+                print("Wrong Choice entered")
 
     def serverInfo(self):
         print(f" Server up and listening on {self._HOST}: {self._PORT}.")

@@ -51,5 +51,3 @@ class Database:
         #     if sqliteConnection:
         #         sqliteConnection.close()
         #         print("The SQLite connection is closed")
-
-
