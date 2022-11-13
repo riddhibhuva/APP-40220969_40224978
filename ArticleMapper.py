@@ -9,39 +9,32 @@ class ArticleMapper:
         self._sqlConnection.executeQuery(squery)
     
     def insertRow(self, dataObj):
-        for data in dataObj:
-            squery = 'INSERT or IGNORE INTO Articles(Article_id, Title, Content, Url, Published_at, Country, Author_id) VALUES("' + data['Article_id']+'","' + data['Title']+'","' + data['Content']+'","' + data['Url']+'","' + data['Published_at']+'","' + data['Country']+'","' + data['Author_id']+'");'
-            self._sqlConnection.executeQuery(squery)
+        squery = 'INSERT or IGNORE INTO Articles(Article_id, Title, Content, Url, Published_at, Country, Author_id) VALUES("' + str(dataObj.get_article_id())+'","' + dataObj.get_title()+'","' + dataObj.get_content()+'","' + dataObj.get_url()+'","' + dataObj.get_published_at()+'","' + dataObj.get_country()+'","' + str(dataObj.get_author_id())+'");'
+        self._sqlConnection.executeQuery(squery)
 
 
-    def deleteOperation(self, choice):
-        if choice == "1":
-            Ddate=input("Enter the date for which you want to delete records : ")
-            squery = 'DELETE From Articles where Published_at = "' + Ddate + '" ;'
-            self._sqlConnection.executeQuery(squery)
-        elif choice == "2":
-            Aid=input("Enter the ID of which you want to delete the article : ")
-            squery = 'DELETE From Articles where Article_id = "' + Aid + '" ;'
-            self._sqlConnection.executeQuery(squery)
-        else:
-            print("Wrong Choice entered")
+    def deleteArticlebydateOperation(self, dataObj):
+        squery = 'DELETE From Articles where Published_at = "' + dataObj.get_published_at() + '" ;'
+        self._sqlConnection.executeQuery(squery)
 
-    def SearchOperation(self,Choice):
-        squery =""
-        if Choice=="4":
-            squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
-        elif Choice=="5":
-            Aname = input("Enter name of author for whom you want to search articles : ")
-            squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_name = "' + Aname +'";'
-        elif Choice=="6":
-            Sname = input("Enter source name for which you want to search articles : ")
-            squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Source_id = (SELECT Source_id from Sources WHERE Source_name = "' + Sname +'");'
-        else:
-            print("Wrong Choice entered")
+    def deleteArticlebyidOperation(self, dataObj):
+        squery = 'DELETE From Articles where Article_id = "' + dataObj.get_author_id() + '" ;'
+        self._sqlConnection.executeQuery(squery)
+
+    def SearchAllOperation(self):
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id;'
         result = self._sqlConnection.executeQuery(squery)
         for data in result:
             print(data)
 
+    def SearchAuthorArticlesOperation(self,dataObj):
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Author_name = "' + dataObj.get_author_name() + '";'
+        result = self._sqlConnection.executeQuery(squery)
+        for data in result:
+            print(data)
 
-
-
+    def SearchSourceArticlesOperation(self,dataObj):
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Authors.Author_name FROM Articles INNER JOIN Authors ON Articles.Author_id = Authors.Author_id WHERE Authors.Source_id = (SELECT Source_id from Sources WHERE Source_name = "' + dataObj.get_source_name() +'");'
+        result = self._sqlConnection.executeQuery(squery)
+        for data in result:
+            print(data)

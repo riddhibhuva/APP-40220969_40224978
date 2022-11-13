@@ -9,35 +9,26 @@ class AuthorMapper:
         self._sqlConnection.executeQuery(squery)
     
     def insertRow(self, dataObj):
-        for data in dataObj:
-            squery = 'INSERT or IGNORE INTO Authors(Author_id, Author_name, email, Source_id) VALUES("' + data['Author_id']+'","' + data['Author_name']+'","' + data['email']+'","' + data['Source_id']+'");'
-            self._sqlConnection.executeQuery(squery)
+        squery = 'INSERT or IGNORE INTO Authors(Author_id, Author_name, email, Source_id) VALUES("' + str(dataObj.get_author_id())+'","' + dataObj.get_author_name()+'","' + dataObj.get_Email()+'","' + str(dataObj.get_source_id())+'");'
+        self._sqlConnection.executeQuery(squery)
 
-    def SearchOperation(self, Choice):
-        squery=""
-        if Choice=="2":
-            squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id;'
-        elif Choice=="3":
-            Sname = input("Enter Source name for which you want to see authors : ")
-            squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id WHERE Sources.Source_name = "' + Sname+';'
-        else:
-            print("Wrong Choice entered")
+    def SearchAllOperation(self):
+        squery = 'SELECT Authors.Author_name, Authors.email, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id;'
         result = self._sqlConnection.executeQuery(squery)
         for data in result:
             print(data)
 
+    def SearchAuthorOperation(self, dataObj):
+        squery = 'SELECT Authors.Author_name, Sources.Source_name FROM Authors INNER JOIN Sources ON Authors.Source_id = Sources.Source_id WHERE Sources.Source_name = "' + dataObj.get_source_name()+'";'
+        result = self._sqlConnection.executeQuery(squery)
 
-    def UpdateOperation(self, Choice):
-        squery =""
-        if Choice=="1":
-            Aname = input("Enter name of author for whom you want to change email : ")
-            email = input("Enter new email : ")
-            squery = 'UPDATE Authors SET email = "' +email+'" WHERE Author_name = "' + Aname+'";'
-        elif Choice=="2":
-            Aname = input("Enter name of author for whom you want to change source : ")
-            Sname = input("Enter new source name : ")
-            squery = 'UPDATE Authors SET Source_id = "' +Sname+'" WHERE Author_name = "' + Aname+'";'
-        else:
-            print("Wrong Choice entered")
+        for data in result:
+            print(data)
 
+    def UpdateEmailOperation(self, dataObj):
+        squery = 'UPDATE Authors SET email = "' +dataObj.get_Email()+'" WHERE Author_name = "' + dataObj.get_author_name()+'";'
+        self._sqlConnection.executeQuery(squery)
+
+    def UpdateSourceOperation(self, AdataObj, SdataObj):
+        squery = 'UPDATE Authors SET Source_id = (SELECT Source_id FROM Sources WHERE Source_name = "' +SdataObj.get_source_name()+'") WHERE Author_name = "' + AdataObj.get_author_name()+'";'
         self._sqlConnection.executeQuery(squery)
