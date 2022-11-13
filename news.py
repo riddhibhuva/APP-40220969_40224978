@@ -1,13 +1,17 @@
 import socket
 import requests
 import json
-from SourceMapper import SourceMapper
-from AuthorMapper import AuthorMapper
-from ArticleMapper import ArticleMapper
+from fastapi import FastAPI
 from Connect import Database
-from SourceModel import SourceModel
-from AuthorModel import AuthorModel
-from ArticleModel import ArticleModel
+from Models.SourceModel import SourceModel
+from Models.AuthorModel import AuthorModel
+from Models.ArticleModel import ArticleModel
+from Mappers.SourceMapper import SourceMapper
+from Mappers.AuthorMapper import AuthorMapper
+from Mappers.ArticleMapper import ArticleMapper
+
+
+app = FastAPI()
 
 class Server:
     def __init__(self, HOST, PORT):
@@ -33,6 +37,7 @@ class Server:
                     print('Connection closed from:', addr)
                 break
 
+    @app.get("/")
     def _getDataFromApi(self) :
         _uri = self._ENDPoint+"?access_key="+self._APIKey
         response = requests.get ("https://raw.githubusercontent.com/AyushiChaudhary23/NewsData/main/db.json").json ()
@@ -46,7 +51,6 @@ class Server:
         sourcemodelObj = SourceModel()
         authormodelObj = AuthorModel()
         articlemodelObj = ArticleModel()
-
 
         print(len(response["News"]))
 
@@ -146,7 +150,6 @@ def main():
     server0bject = Server(HOST, PORT)
     # serverObject._initServer()
     server0bject._getDataFromApi()
-
 
 if __name__ == "__main__":
     main()
