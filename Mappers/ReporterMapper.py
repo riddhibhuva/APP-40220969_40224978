@@ -27,7 +27,7 @@ class ReporterMapper:
         #     print(data)
 
     def SearchReporterOperation(self, dataObj):
-        squery = 'SELECT Reporters.Reporter_name, Channels.Channel_name FROM Reporters INNER JOIN Channels ON Reporters.Channel_id = Channels.Channel_id WHERE Channels.Channel_name = "' + str(dataObj.get_channel_name)+'";'
+        squery = 'SELECT Reporters.Reporter_name, Channels.Channel_name FROM Reporters INNER JOIN Channels ON Reporters.Channel_id = Channels.Channel_id WHERE Channels.Channel_name = "' + str(dataObj['Channel_name'])+'";'
         result = self._sqlConnection.executeQuery(squery)
         column_name = ["Reporter_name", "Channel_name"]
         final = []

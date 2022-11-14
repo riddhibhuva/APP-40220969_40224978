@@ -35,7 +35,7 @@ class ArticleMapper:
         #     print(data)
 
     def SearchReporterArticlesOperation(self, dataObj):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Reporters.Reporter_name FROM Articles INNER JOIN Reporters ON Articles.Reporter_id = Reporters.Reporter_id WHERE Reporters.Reporter_name = "' + str(dataObj.get_reporter_name) + '";'
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Reporters.Reporter_name FROM Articles INNER JOIN Reporters ON Articles.Reporter_id = Reporters.Reporter_id WHERE Reporters.Reporter_name = "' + str(dataObj['Reporter_name']) + '";'
         result = self._sqlConnection.executeQuery(squery)
         column_name = ["Title", "Content", "Url","Published_at", "Country", "Reporter_name"]
         final = []
@@ -48,7 +48,7 @@ class ArticleMapper:
 
     def SearchChannelArticlesOperation(self, dataObj):
         squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Reporters.Reporter_name FROM Articles INNER JOIN Reporters ON Articles.Reporter_id = Reporters.Reporter_id ' \
-                 'WHERE Reporters.Channel_id = (SELECT Channel_id from Channels WHERE Channel_name = "' + str(dataObj.get_channel_name) +'");'
+                 'WHERE Reporters.Channel_id = (SELECT Channel_id from Channels WHERE Channel_name = "' + str(dataObj['Channel_name']) +'");'
         result = self._sqlConnection.executeQuery(squery)
         column_name = ["Title", "Content", "Url", "Published_at", "Country", "Reporter_name"]
         final = []
