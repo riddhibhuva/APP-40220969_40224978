@@ -2,73 +2,73 @@
     "News" : 
     [
         {
-            "Sources" : 
+            "Channel" :
             [
                 {
-                    "Source_id" : "1",
-                    "Source_name" : "BBC-News"
+                    "Channel_id" : "1",
+                    "Channel_name" : "BBC-News"
                 },
                 {
-                    "Source_id" : "2",
-                    "Source_name" : "New York Times"
+                    "Channel_id" : "2",
+                    "Channel_name" : "New York Times"
                 },
                 {
-                    "Source_id" : "3",
-                    "Source_name" : "Times Of India"
+                    "Channel_id" : "3",
+                    "Channel_name" : "Times Of India"
                 },
                 {
-                    "Source_id" : "4",
-                    "Source_name" : "National Post Canada"
+                    "Channel_id" : "4",
+                    "Channel_name" : "National Post Canada"
                 },
                 {
-                    "Source_id" : "5",
-                    "Source_name" : "CNN"
+                    "Channel_id" : "5",
+                    "Channel_name" : "CNN"
                 }
             ],
 
-            "Authors":
+            "Reporters":
             [
                 {
-                    "Author_id" : "1",
-                    "Author_name" : "Pranay Parab",
+                    "Reporter_id" : "1",
+                    "Reporter_name" : "Pranay Parab",
                     "email" : "pranay.parab@times.in",
-                    "Source_id" : "3"
+                    "Channel_id" : "3"
                 },
                 {
-                    "Author_id" : "2",
-                    "Author_name" : "John Fingas",
+                    "Reporter_id" : "2",
+                    "Reporter_name" : "John Fingas",
                     "email" : "johnfin23@bbc.com",
-                    "Source_id" : "1"
+                    "Channel_id": "1"
                 },
                 {
-                    "Author_id" : "3",
-                    "Author_name" : "Steven Goff",
+                    "Reporter_id": "3",
+                    "Reporter_name": "Steven Goff",
                     "email" : "steveng@nyt.com",
-                    "Source_id" : "2"
+                    "Channel_id": "2"
                 },
                 {
-                    "Author_id" : "4",
-                    "Author_name" : "Victoria Song",
+                    "Reporter_id": "4",
+                    "Reporter_name": "Victoria Song",
                     "email" : "vicsong@bbc.com",
-                    "Source_id" : "1"
+                    "Channel_id": "1"
                 },
                 {
-                    "Author_id" : "5",
-                    "Author_name" : "Dan Hiching",
+                    "Reporter_id": "5",
+                    "Reporter_name": "Dan Hiching",
                     "email" : "dhiching@npost.ca",
-                    "Source_id" : "4"
+                    "Channel_id": "4"
                 },
                 {
-                    "Author_id" : "6",
-                    "Author_name" : "Benjamin Lee",
+                    "Reporter_id": "6",
+                    "Reporter_name": "Benjamin Lee",
                     "email" : "benjaminlee@npost.ca",
-                    "Source_id" : "4"
+                    "Channel_id": "4"
                 },
                 {
-                    "Author_id" : "7",
-                    "Author_name" : "Will Shanklin",
+                    "Reporter_id": "7",
+                    "Reporter_name": "Will Shanklin",
                     "email" : "willshan86@cnn.com",
-                    "Source_id" : "5"
+                    "Channel_id": "5"
                 }
             ],
 
@@ -81,7 +81,7 @@
                     "Url" : "https://lifehacker.com/your-mac-has-a-hidden-white-noise-generator-1849760988", 
                     "Published_at" : "2022-11-09T16:00:00Z", 
                     "Country" : "United States", 
-                    "Author_id" : "1"
+                    "Reporter_id": "1"
                 },
                 {
                     "Article_id" : "2", 
@@ -90,7 +90,7 @@
                     "Url" : "https://www.engadget.com/spotify-apple-watch-app-watchos-offline-shuffle-podcasts-182436855.html", 
                     "Published_at" : "2022-11-09T18:24:36Z",    
                     "Country" : "Canada", 
-                    "Author_id" : "7"
+                    "Reporter_id": "7"
                 },
                 {
                     "Article_id" : "3", 
@@ -99,7 +99,7 @@
                     "Url" : "https://www.engadget.com/windows-11-icloud-photos-update-214218257.html", 
                     "Published_at" : "2022-11-09T21:42:18Z",    
                     "Country" : "India", 
-                    "Author_id" : "7"
+                    "Reporter_id": "7"
                 },
                 {
                     "Article_id" : "4", 
@@ -108,7 +108,7 @@
                     "Url" : "https://www.engadget.com/folding-iphone-unofficial-171559538.html", 
                     "Published_at" : "2022-11-09T17:15:59Z",    
                     "Country" : "Japan", 
-                    "Author_id" : "2"
+                    "Reporter_id": "2"
                 },
                 {
                     "Article_id" : "5", 
@@ -117,7 +117,7 @@
                     "Url" : "https://www.theverge.com/2022/11/9/23449106/polar-ignite-3-smartwatch-fitness-tracker-alertness-levels", 
                     "Published_at" : "2022-11-09T16:17:11Z",    
                     "Country" : "United Kingdom", 
-                    "Author_id" : "4"
+                    "Reporter_id": "4"
                 },
                 {
                     "Article_id" : "6", 
@@ -126,7 +126,7 @@
                     "Url" : "https://gizmodo.com/hackers-say-this-is-the-world-s-first-folding-iphone-1849761977", 
                     "Published_at" : "2022-11-09T15:35:07Z",    
                     "Country" : "United States", 
-                    "Author_id" : "5"
+                    "Reporter_id": "5"
                 },
                 {
                     "Article_id" : "7", 
@@ -135,7 +135,7 @@
                     "Url" : "https://gizmodo.com/amazon-market-cap-amazon-prime-e-commerce-1849764529", 
                     "Published_at" : "2022-11-09T22:35:00Z",    
                     "Country" : "Japan", 
-                    "Author_id" : "3"
+                    "Reporter_id": "3"
                 },
                 {
                     "Article_id" : "8", 
@@ -144,7 +144,7 @@
                     "Url" : "https://www.theguardian.com/business/2022/nov/09/british-energy-suppliers-criticised-over-disconnection-by-the-back-door",
                     "Published_at" : "2022-11-09T14:18:21Z",
                     "Country" : "Japan", 
-                    "Author_id" : "6"
+                    "Reporter_id": "6"
                 },
                 {
                     "Article_id" : "9", 
@@ -153,7 +153,7 @@
                     "Url" : "https://arstechnica.com/gadgets/2022/11/usb-adapter-claims-to-quadruple-m2-and-m1-mac-monitor-support/", 
                     "Published_at" : "2022-11-09T19:02:49Z",    
                     "Country" : "India", 
-                    "Author_id" : "1"
+                    "Reporter_id": "1"
                 },
                 {
                     "Article_id" : "10", 
@@ -162,7 +162,7 @@
                     "Url" : "https://www.theguardian.com/world/2022/nov/10/us-estimates-200000-military-casualties-all-sides-ukraine-war",
                     "Published_at" : "2022-11-10T09:44:39Z",
                     "Country" : "United States", 
-                    "Author_id" : "7"
+                    "Reporter_id": "7"
                 },
                 {
                     "Article_id" : "11", 
@@ -171,7 +171,7 @@
                     "Url" : "https://www.theguardian.com/fashion/2022/nov/09/blackbird-spyplane-newsletter-jonah-weiner-interview", 
                     "Published_at" : "2022-11-10T06:00:48Z",    
                     "Country" : "India", 
-                    "Author_id" : "4"
+                    "Reporter_id": "4"
                 },
                 {
                     "Article_id" : "12", 
@@ -180,7 +180,7 @@
                     "Url" : "https://www.macrumors.com/2022/11/09/amazon-apple-collusion-antitrust-lawsuit/", 
                     "Published_at" : "2022-11-09T17:50:19Z",    
                     "Country" : "United Kingdom", 
-                    "Author_id" : "2"
+                    "Reporter_id": "2"
                 },
                 {
                     "Article_id" : "13", 
@@ -189,7 +189,7 @@
                     "Url" : "https://www.theguardian.com/uk-news/2022/nov/10/uk-civil-servants-whitehall-frontline-services-vote-strike", 
                     "Published_at" : "2022-11-10T12:45:33Z",    
                     "Country" : "United Kingdom", 
-                    "Author_id" : "6"
+                    "Reporter_id": "6"
                 },
                 {
                     "Article_id" : "14", 
@@ -198,7 +198,7 @@
                     "Url" : "https://www.reuters.com/markets/global-markets-wrapup-1-pix-2022-11-10/", 
                     "Published_at" : "2022-11-10T02:04:00Z",    
                     "Country" : "India", 
-                    "Author_id" : "5"
+                    "Reporter_id": "5"
                 },
                 {
                     "Article_id" : "15", 
@@ -207,7 +207,7 @@
                     "Url" : "https://www.theguardian.com/environment/2022/nov/10/big-rise-in-number-of-fossil-fuel-lobbyists-at-cop27-climate-summit",
                     "Published_at" : "2022-11-10T09:32:49Z",
                     "Country" : "Japan", 
-                    "Author_id" : "3"
+                    "Reporter_id": "3"
                 },
                 {
                     "Article_id" : "16", 
@@ -216,7 +216,7 @@
                     "Url" : "https://readwrite.com/what-companies-are-in-the-technology-field/",
                     "Published_at" : "2022-11-09T19:00:29Z",
                     "Country" : "United States", 
-                    "Author_id" : "7"
+                    "Reporter_id": "7"
                 },
                 {
                     "Article_id" : "17", 
@@ -225,7 +225,7 @@
                     "Url" : "https://www.androidcentral.com/streaming-tv/amazon-fire-tv-cube-2022-review", 
                     "Published_at" : "2022-11-09T15:15:24Z",    
                     "Country" : "Canada", 
-                    "Author_id" : "1"
+                    "Reporter_id": "1"
                 },
                 {
                     "Article_id" : "18", 
@@ -234,7 +234,7 @@
                     "Url" : "https://www.theguardian.com/technology/2022/nov/09/apple-watch-ultra-review-smartwatch-design-athletes", 
                     "Published_at" : "2022-11-09T07:00:24Z",    
                     "Country" : "Canada", 
-                    "Author_id" : "1"
+                    "Reporter_id": "1"
                 },
                 {
                     "Article_id" : "19", 
@@ -243,7 +243,7 @@
                     "Url" : "https://www.theguardian.com/film/2022/nov/09/spirited-review-will-ferrell-ryan-reynolds", 
                     "Published_at" : "2022-11-09T18:03:45Z",    
                     "Country" : "United States", 
-                    "Author_id" : "5"
+                    "Reporter_id": "5"
                 },
                 {
                     "Article_id" : "20", 
@@ -252,7 +252,7 @@
                     "Url" : "https://www.theguardian.com/technology/2022/nov/09/why-mark-zuckerberg-announce-11000-job-cuts-meta", 
                     "Published_at" : "2022-11-09T18:37:20Z",    
                     "Country" : "United States", 
-                    "Author_id" : "3"
+                    "Reporter_id": "3"
                 }
             ]
         }

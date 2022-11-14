@@ -1,12 +1,12 @@
 import socket
 import requests
 import json
-from SourceMapper import SourceMapper
-from AuthorMapper import AuthorMapper
+from ChannelMapper import ChannelMapper
+from ReporterMapper import ReporterMapper
 from ArticleMapper import ArticleMapper
 from Connect import Database
-from SourceModel import SourceModel
-from AuthorModel import AuthorModel
+from ChannelModel import ChannelModel
+from ReporterModel import ReporterModel
 from ArticleModel import ArticleModel
 from fastapi import FastAPI
 
@@ -17,8 +17,8 @@ class Server:
         self._PORT = PORT
         self._APIKey = ""
         self._ENDPoint = ""
-        self._SourceMapper = SourceMapper()
-        self._AuthorMapper = AuthorMapper()
+        self._ChannelMapper = ChannelMapper()
+        self._ReporterMapper = ReporterMapper()
         self._ArticleMapper = ArticleMapper()
 
     def _initServer(self):
@@ -41,96 +41,73 @@ class Server:
         db = Database.getClassObject()
         db. connect()
         print("Database Connected to the Backend")
-        self._SourceMapper.createTable()
-        self._AuthorMapper.createTable()
+        self._ChannelMapper.createTable()
+        self._ReporterMapper.createTable()
         self._ArticleMapper.createTable()
 
-        sourcemodelObj = SourceModel()
-        authormodelObj = AuthorModel()
-        articlemodelObj = ArticleModel()
+        # channelmodelObj = ChannelModel()
+        # reportermodelObj = ReporterModel()
+        # articlemodelObj = ArticleModel()
 
 
         print(len(response["News"]))
 
         for item in response["News"]:
-            for data in item["Sources"]:
-                sourcemodelObj.set_source_id(data['Source_id'])
-                sourcemodelObj.set_source_name(data['Source_name'])
-                self._SourceMapper.insertRow(sourcemodelObj)
+            for data in item["Channel"]:  #Call all set methods inside constructors and pass the data object in the constructor
+                # channelmodelObj.set_channel_id(data['Channel_id'])
+                # channelmodelObj.set_channel_name(data['Channel_name'])
+                channelmodelObj = ChannelModel(data)
+                self._ChannelMapper.insertRow(channelmodelObj)
+
         for item in response ["News"]:
-            for data in item["Authors"]:
-                authormodelObj.set_author_id(data['Author_id'])
-                authormodelObj.set_author_name(data['Author_name'])
-                authormodelObj.set_Email(data['email'])
-                authormodelObj.set_source_id(data['Source_id'])
-                self._AuthorMapper.insertRow(authormodelObj)
+            for data in item["Reporters"]:
+                # reportermodelObj.set_reporter_id(data['Reporter_id'])
+                # reportermodelObj.set_reporter_name(data['Reporter_name'])
+                # reportermodelObj.set_Email(data['email'])
+                # reportermodelObj.set_channel_id(data['Channel_id'])
+                reportermodelObj = ReporterModel(data)
+                self._ReporterMapper.insertRow(reportermodelObj)
+
         for item in response["News"]:
             for data in item["Articles"]:
-                articlemodelObj.set_article_id(data['Article_id'])
-                articlemodelObj.set_title(data['Title'])
-                articlemodelObj.set_content(data['Content'])
-                articlemodelObj.set_url(data['Url'])
-                articlemodelObj.set_published_at(data['Published_at'])
-                articlemodelObj.set_country(data['Country'])
-                articlemodelObj.set_author_id(data['Author_id'])
+                # articlemodelObj.set_article_id(data['Article_id'])
+                # articlemodelObj.set_title(data['Title'])
+                # articlemodelObj.set_content(data['Content'])
+                # articlemodelObj.set_url(data['Url'])
+                # articlemodelObj.set_published_at(data['Published_at'])
+                # articlemodelObj.set_country(data['Country'])
+                # articlemodelObj.set_reporter_id(data['Reporter_id'])
+                articlemodelObj = ArticleModel(data)
                 self._ArticleMapper.insertRow(articlemodelObj)
+
         print("Task Completed.....")
         while True:
             operation=""
             choice =0
-            operation = input('Which Operation you want to perform? \n 1.Delete \n 2.Update \n 3.Search \n 4.Exit')
-            if (operation == "Delete"):
-                choice=input(" 1.Delete Article based on published date \n 2.Delete Article based on Article id")
-                if choice == "1":
-                    Ddate = input("Enter the date for which you want to delete records : ")
-                    articlemodelObj.set_published_at(Ddate)
-                    self._ArticleMapper.deleteArticlebydateOperation(articlemodelObj)
-                elif choice == "2":
-                    Aid = input("Enter the ID of which you want to delete the article : ")
-                    articlemodelObj.set_author_id(Aid)
-                    print(authormodelObj.author_id)
-                    self._ArticleMapper.deleteArticlebyidOperation(articlemodelObj)
-                else:
-                    print("Wrong Choice entered")
+            operation = input('Which Operation you want to perform?  \n 3.Search \n 4.Exit')
 
-            elif (operation == "Update"):
-                choice = input(" 1.Update email of author based on author name \n 2.Update source for author based on author name")
+            if operation == "Search":
+                choice=input("  1. Search all Articles \n 2. Search all Reporters working for a Channel"
+                             " \n 3. Search Articles written by specific Reporter "
+                             "\n 4.Search Articles based of specific Channel ")
+                # if choice == "1":
+                #     self._ChannelMapper.SearchOperation()
+                # elif choice == "2" :
+                #     self._ReporterMapper.SearchAllOperation()
                 if choice == "1":
-                    Aname = input("Enter name of author for whom you want to change email : ")
-                    authormodelObj.set_author_name(Aname)
-                    email = input("Enter new email : ")
-                    authormodelObj.set_Email(email)
-                    self._AuthorMapper.UpdateEmailOperation(authormodelObj)
-                elif choice == "2":
-                    Aname = input("Enter name of author for whom you want to change source : ")
-                    authormodelObj.set_author_name(Aname)
-                    Sname = input("Enter new source name : ")
-                    sourcemodelObj.set_source_name(Sname)
-                    self._AuthorMapper.UpdateSourceOperation(authormodelObj, sourcemodelObj)
-                else:
-                    print("Wrong Choice entered")
-
-            elif (operation == "Search"):
-                choice=input(" 1.Search all Sources \n 2.Search all authors \n 3.Search all authors for a source \n 4.Search all Articles"
-                             " \n 5.Search Articles based on Author name \n 6.Search Articles based on Source name ")
-                if choice == "1":
-                    self._SourceMapper.SearchOperation()
+                    Sname = input("Enter Channel name for which you want to see authors : ")
+                    channelmodelObj.set_channel_name(Sname)
+                    self._ReporterMapper.SearchReporterOperation(channelmodelObj)
                 elif choice == "2" :
-                    self._AuthorMapper.SearchAllOperation()
-                elif choice == "3":
-                    Sname = input("Enter Source name for which you want to see authors : ")
-                    sourcemodelObj.set_source_name(Sname)
-                    self._AuthorMapper.SearchAuthorOperation(sourcemodelObj)
-                elif choice == "4" :
                     self._ArticleMapper.SearchAllOperation()
-                elif choice == "5" :
-                    Aname = input("Enter name of author for whom you want to search articles : ")
-                    authormodelObj.set_author_name(Aname)
-                    self._ArticleMapper.SearchAuthorArticlesOperation(authormodelObj)
-                elif choice == "6" :
-                    Sname = input("Enter source name for which you want to search articles : ")
-                    sourcemodelObj.set_source_name(Sname)
-                    self._ArticleMapper.SearchSourceArticlesOperation(sourcemodelObj)
+                elif choice == "3" :
+                    Aname = input("Enter name of Reporter for whom you want to search articles : ")
+                    reportermodelObj.set_reporter_name(Aname)
+                    self._ArticleMapper.SearchReporterArticlesOperation(reportermodelObj)
+                elif choice == "4" :
+                    Sname = input("Enter Channel name for which you want to search articles : ")
+                    channelmodelObj.set_channel_name(Sname)
+                    self._ArticleMapper.SearchChannelArticlesOperation(channelmodelObj)
                 else:
                     print("Wrong Choice entered")
 

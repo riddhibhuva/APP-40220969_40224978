@@ -1,12 +1,12 @@
 class ArticleModel:
-    def __init__(self):
-        self.article_id = None
-        self.title = None
-        self.content = None
-        self.url = None
-        self.published_at = None
-        self.country = None
-        self.author_id = None
+    def __init__(self,data):
+        self.article_id = data['Article_id']
+        self.title = data['Title']
+        self.content = data['Content']
+        self.url = data['Url']
+        self.published_at = data['Published_at']
+        self.country = data['Country']
+        self.reporter_id = data['Reporter_id']
 
     def set_article_id(self, artid):
         self.article_id = artid
@@ -44,10 +44,10 @@ class ArticleModel:
     def get_country(self):
         return self.country
 
-    def set_author_id(self, authid):
-        self.author_id = authid
-        print(authid)
-        print(self.author_id)
+    def set_reporter_id(self, repoid):
+        self.reporter_id = repoid
+        # print(authid)
+        # print(self.author_id)
 
-    def get_author_id(self):
-        return self.author_id
+    def get_reporter_id(self):
+        return self.reporter_id

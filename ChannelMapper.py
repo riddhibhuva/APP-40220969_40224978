@@ -1,22 +1,22 @@
 from Connect import Database 
 
 
-class SourceMapper :
+class ChannelMapper :
     def __init__(self) :
         self._sqlConnection = Database.getClassObject()
     
     def createTable(self):
-        squery="CREATE TABLE IF NOT EXISTS Sources(Source_id INTEGER PRIMARY KEY UNIQUE NOT NULL, Source_name VARCHAR NOT NULL) "
+        squery="CREATE TABLE IF NOT EXISTS Channels(Channel_id INTEGER PRIMARY KEY UNIQUE NOT NULL, Channel_name VARCHAR NOT NULL) "
         self._sqlConnection.executeQuery(squery)
 
     def insertRow(self, dataObj):
-        squery = 'INSERT or IGNORE INTO Sources(Source_id, Source_name) VALUES(' + str(dataObj.get_source_id()) + ',"' + dataObj.get_source_name() + '"); '
+        squery = 'INSERT or IGNORE INTO Channels(Channel_id, Channel_name) VALUES(' + str(dataObj.get_channel_id()) + ',"' + dataObj.get_channel_name() + '"); '
         self._sqlConnection.executeQuery(squery)
 
     def SearchOperation(self):
-        squery = 'SELECT Source_name FROM Sources;'
+        squery = 'SELECT * FROM Channels;'
         result = self._sqlConnection.executeQuery(squery)
-        column_name = ["Source_name"]
+        column_name = ["Channel_id","Channel_name"]
         final = []
         for data in result:
             temp = dict(zip(column_name, data))

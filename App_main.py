@@ -1,17 +1,17 @@
-from SourceMapper import SourceMapper
+from ChannelMapper import ChannelMapper
 from ArticleMapper import ArticleMapper
-from AuthorMapper import AuthorMapper
+from ReporterMapper import ReporterMapper
 from fastapi import FastAPI
 from Connect import Database
-from SourceModel import SourceModel
+from ChannelModel import ChannelModel
 from ArticleModel import ArticleModel
-from AuthorModel import AuthorModel
+from ReporterModel import ReporterModel
 
 app = FastAPI()
 
-SourceMapper = SourceMapper()
+ChannelMapper = ChannelMapper()
 ArticleMapper = ArticleMapper()
-AuthorMapper = AuthorMapper()
+ReporterMapper = ReporterMapper()
 
 
 # @app.post("/")
@@ -23,34 +23,34 @@ AuthorMapper = AuthorMapper()
 db = Database.getClassObject()
 db. connect()
 
-@app.get("/DisplayAllSource")
-async def _display_all_sources():
-    result_source = SourceMapper.SearchOperation()
-    return result_source
+# @app.get("/Display All Channels")
+# async def _display_all_channel():
+#     result_source = ChannelMapper.SearchOperation()
+#     return result_source
+#
+# @app.get("/Display All Reporters")
+# async def _display_all_reporter():
+#     result_author = ReporterMapper.SearchAllOperation()
+#     return result_author
 
-@app.get("/Display All Author")
-async def _display_all_authors():
-    result_author = AuthorMapper.SearchAllOperation()
-    return result_author
-
-@app.get("/Display all articles")
+@app.get("/Display All Articles")
 async def _display_all_articles():
     result_article = ArticleMapper.SearchAllOperation()
     return result_article
 
-@app.post("/Display All Author for a specific Source")
-async def _display_all_author_for_source(data:dict):
-    result = AuthorMapper.SearchAuthorOperation(data)
+@app.post("/Display All Reporters for a specific Channel")
+async def _display_all_reporter_for_channel(data:dict):
+    result = ReporterMapper.SearchReporterOperation(data)
     return {"Author Details": result}
 
-@app.post("/Display Articles of Specific Author")
-async def _display_all_articles_for_author(data:dict):
-    result = ArticleMapper.SearchAuthorArticlesOperation(data)
+@app.post("/Display Articles of Specific Reporter")
+async def _display_all_articles_for_reporter(data:dict):
+    result = ArticleMapper.SearchReporterArticlesOperation(data)
     return {"Article Details": result}
 
-@app.post("/Display Articles of Specific Source")
-async def _display_all_articles_for_source(data:dict):
-    result = ArticleMapper.SearchSourceArticlesOperation(data)
+@app.post("/Display Articles of Specific Channel")
+async def _display_all_articles_for_channel(data:dict):
+    result = ArticleMapper.SearchChannelArticlesOperation(data)
     return {"Article Details": result}
 
 
