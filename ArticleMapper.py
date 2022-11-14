@@ -3,6 +3,7 @@ from Connect import Database
 class ArticleMapper:
     def __init__(self) :
         self._sqlConnection = Database.getClassObject()
+        self._sqlConnection.connect()
     
     def createTable(self):
         squery="CREATE TABLE IF NOT EXISTS Articles(Article_id INTEGER PRIMARY KEY UNIQUE NOT NULL, Title VARCHAR(500) NOT NULL, Content STRING NOT NULL, Url VARCHAR, Published_at VARCHAR, Country VARCHAR, Reporter_id INTEGER NOT NULL, FOREIGN KEY(Reporter_id) REFERENCES Author(Reporter_id))"
@@ -34,7 +35,7 @@ class ArticleMapper:
         #     print(data)
 
     def SearchReporterArticlesOperation(self, dataObj):
-        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Reporters.Reporter_name FROM Articles INNER JOIN Reporters ON Articles.Reporter_id = Reporters.Reporter_id WHERE Reporters.Reporter_name = "' + str(dataObj['Reporter_name']) + '";'
+        squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Reporters.Reporter_name FROM Articles INNER JOIN Reporters ON Articles.Reporter_id = Reporters.Reporter_id WHERE Reporters.Reporter_name = "' + str(dataObj.get_reporter_name) + '";'
         result = self._sqlConnection.executeQuery(squery)
         column_name = ["Title", "Content", "Url","Published_at", "Country", "Reporter_name"]
         final = []
@@ -47,7 +48,7 @@ class ArticleMapper:
 
     def SearchChannelArticlesOperation(self, dataObj):
         squery = 'SELECT Articles.Title, Articles.Content, Articles.Url, Articles.Published_at, Articles.Country, Reporters.Reporter_name FROM Articles INNER JOIN Reporters ON Articles.Reporter_id = Reporters.Reporter_id ' \
-                 'WHERE Reporters.Channel_id = (SELECT Channel_id from Channels WHERE Channel_name = "' + str(dataObj['Channel_name']) +'");'
+                 'WHERE Reporters.Channel_id = (SELECT Channel_id from Channels WHERE Channel_name = "' + str(dataObj.get_channel_name) +'");'
         result = self._sqlConnection.executeQuery(squery)
         column_name = ["Title", "Content", "Url", "Published_at", "Country", "Reporter_name"]
         final = []
