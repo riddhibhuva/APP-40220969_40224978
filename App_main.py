@@ -1,11 +1,11 @@
-from ChannelMapper import ChannelMapper
-from ArticleMapper import ArticleMapper
-from ReporterMapper import ReporterMapper
+from Mappers.ChannelMapper import ChannelMapper
+from Mappers.ArticleMapper import ArticleMapper
+from Mappers.ReporterMapper import ReporterMapper
 from fastapi import FastAPI
 from Connect import Database
-from ChannelModel import ChannelModel
-from ArticleModel import ArticleModel
-from ReporterModel import ReporterModel
+from Models.ChannelModel import ChannelModel
+from Models.ArticleModel import ArticleModel
+from Models.ReporterModel import ReporterModel
 
 app = FastAPI()
 

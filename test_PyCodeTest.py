@@ -1,10 +1,10 @@
-from ChannelMapper import ChannelMapper
-from ReporterMapper import ReporterMapper
-from ArticleMapper import ArticleMapper
+from Mappers.ChannelMapper import ChannelMapper
+from Mappers.ReporterMapper import ReporterMapper
+from Mappers.ArticleMapper import ArticleMapper
 from Connect import Database
-from ChannelModel import ChannelModel
-from ReporterModel import ReporterModel
-from ArticleModel import ArticleModel
+from Models.ChannelModel import ChannelModel
+from Models.ReporterModel import ReporterModel
+from Models.ArticleModel import ArticleModel
 import pytest
 
 
