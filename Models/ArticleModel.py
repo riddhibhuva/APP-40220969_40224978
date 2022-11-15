@@ -46,8 +46,6 @@ class ArticleModel:
 
     def set_reporter_id(self, repoid):
         self.reporter_id = repoid
-        # print(authid)
-        # print(self.author_id)
 
     def get_reporter_id(self):
         return self.reporter_id
