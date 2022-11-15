@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="22d26dea-9bd6-4af3-9a9f-f6449003e1b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArticleMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleMapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArticleModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthorMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReporterMapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthorModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReporterModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SourceMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChannelMapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SourceModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChannelModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news.db" beforeDir="false" afterPath="$PROJECT_DIR$/news.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/news.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "D:/Fall 2022/APP/ProjectAPP/APP-40220969_40224978",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,5 +57,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Connect.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
